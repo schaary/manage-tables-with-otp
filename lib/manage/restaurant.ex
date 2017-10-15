@@ -2,9 +2,9 @@ defmodule Manage.Restaurant do
 
   defstruct name: "", status: "open"
 
-  def new(name) do
+  def new(restaurant_name) do
     %Manage.Restaurant{
-      name: name
+      name: restaurant_name
     }
   end
 

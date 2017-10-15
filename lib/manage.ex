@@ -1,18 +1,19 @@
 defmodule Manage do
-  @moduledoc """
-  Documentation for Manage.
-  """
 
-  @doc """
-  Hello world.
+  def new(restaurant_name) do
+    {:ok, pid} = Supervisor.start_child(Manage.Supervisor, [restaurant_name])
+    pid
+  end
 
-  ## Examples
+  def is_open?(restaurant_pid) do
+    GenServer.call(restaurant_pid, { :is_open? })
+  end
 
-      iex> Manage.hello
-      :world
+  def close!(restaurant_pid) do
+    GenServer.call(restaurant_pid, { :close! })
+  end
 
-  """
-  def hello do
-    :world
+  def crash(restaurant_pid) do
+    GenServer.call(restaurant_pid, { :crash })
   end
 end
