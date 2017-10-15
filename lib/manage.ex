@@ -10,7 +10,7 @@ defmodule Manage do
   end
 
   def close!(restaurant_pid) do
-    GenServer.call(restaurant_pid, { :close! })
+    GenServer.cast(restaurant_pid, { :close! })
   end
 
   def crash(restaurant_pid) do

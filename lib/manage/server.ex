@@ -16,6 +16,12 @@ defmodule Manage.Server do
     { :reply, Restaurant.is_open?(restaurant), restaurant }
   end
 
+  def handle_cast({ :close! }, restaurant) do
+    new_restaurant = Restaurant.close!(restaurant)
+
+    { :noreply, new_restaurant }
+  end
+
   def handle_call({ :status }, _from, restaurant) do
     { :reply , Restaurant.status(restaurant), restaurant }
   end
