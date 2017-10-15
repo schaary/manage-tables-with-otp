@@ -15,4 +15,5 @@ defmodule Manage.Restaurant do
     %{ restaurant | status: "closed" }
   end
 
+  def status(%Manage.Restaurant{} = restaurant), do: restaurant
 end

@@ -16,4 +16,8 @@ defmodule Manage do
   def crash(restaurant_pid) do
     GenServer.call(restaurant_pid, { :crash })
   end
+
+  def status(restaurant_pid) do
+    GenServer.call(restaurant_pid, { :status })
+  end
 end

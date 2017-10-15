@@ -15,4 +15,8 @@ defmodule Manage.Server do
   def handle_call({ :is_open }, _from, restaurant) do
     { :reply, Restaurant.is_open?(restaurant), restaurant }
   end
+
+  def handle_call({ :status }, _from, restaurant) do
+    { :reply , Restaurant.status(restaurant), restaurant }
+  end
 end
