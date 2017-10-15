@@ -6,7 +6,7 @@ defmodule Manage do
   end
 
   def is_open?(restaurant_pid) do
-    GenServer.call(restaurant_pid, { :is_open? })
+    GenServer.call(restaurant_pid, { :is_open })
   end
 
   def close!(restaurant_pid) do
